@@ -40,16 +40,16 @@ test.describe('Student Registration Form Tests', () => {
         });
 
         await test.step('Step 3 - Validate data entered', async () => {
-            await expect(page.locator('.modal-content tbody tr:has-text("Student Name")').locator('td').nth(1)).toContainText('Crisa De Juan');
-            await expect(page.locator('.modal-content tbody tr').nth(1).locator('td').nth(1)).toContainText('dejuancrisa@gmail.com');
-            await expect(page.locator('.modal-content tbody tr').nth(2).locator('td').nth(1)).toContainText('Female');
-            await expect(page.locator('.modal-content tbody tr').nth(3).locator('td').nth(1)).toContainText('9663853712');
-            await expect(page.locator('.modal-content tbody tr').nth(4).locator('td').nth(1)).toContainText('08 October,1993');
-            await expect(page.locator('.modal-content tbody tr').nth(5).locator('td').nth(1)).toContainText('English');
-            await expect(page.locator('.modal-content tbody tr').nth(6).locator('td').nth(1)).toContainText('Sports');
-            await expect(page.locator('.modal-content tbody tr').nth(7).locator('td').nth(1)).toContainText('');
-            await expect(page.locator('.modal-content tbody tr').nth(8).locator('td').nth(1)).toContainText('Malolos, Bulacan');
-            await expect(page.locator('.modal-content tbody tr').nth(9).locator('td').nth(1)).toContainText('NCR Delhi');
+            await expect.soft(page.locator('.modal-content tbody tr:has-text("Student Name")').locator('td').nth(1), 'Name Checking').toContainText('Crisa De Juan');
+            await expect.soft(page.locator('.modal-content tbody tr').nth(1).locator('td').nth(1), 'Email Checking').toContainText('dejuancrisa@gmail.com');
+            await expect.soft(page.locator('.modal-content tbody tr').nth(2).locator('td').nth(1), 'Gender Checking').toContainText('Female');
+            await expect.soft(page.locator('.modal-content tbody tr').nth(3).locator('td').nth(1), 'Number Checking').toContainText('9663853712');
+            await expect.soft(page.locator('.modal-content tbody tr').nth(4).locator('td').nth(1), 'Bday Checking').toContainText('08 October,1993');
+            await expect.soft(page.locator('.modal-content tbody tr').nth(5).locator('td').nth(1), 'Subject Checking').toContainText('English');
+            await expect.soft(page.locator('.modal-content tbody tr').nth(6).locator('td').nth(1), 'Hobbies Checking').toContainText('Sports');
+            await expect.soft(page.locator('.modal-content tbody tr').nth(7).locator('td').nth(1), 'Picture Checking').toContainText('');
+            await expect.soft(page.locator('.modal-content tbody tr').nth(8).locator('td').nth(1), 'Address Checking').toContainText('Malolos, Bulacan');
+            await expect.soft(page.locator('.modal-content tbody tr').nth(9).locator('td').nth(1), 'State and City Checking').toContainText('NCR Delhi');
 
             await expect(page.locator('//div[@class="modal-content"]//tbody/tr').nth(9).locator('td').nth(1)).toContainText('NCR Delhi');
         });
